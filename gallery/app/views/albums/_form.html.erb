@@ -1,0 +1,43 @@
+<div class=" container-fluid d-flex justify-content-center ">
+<%= form_with model: @album do |form| %>
+<div class=" container form_border">
+  <div class="fs-5" >
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+    <% @album.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div><br>
+
+  <div class="fs-5">
+    <%= form.label :body %><br>
+    <%= form.text_area :body %><br>
+    <% @album.errors.full_messages_for(:body).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div><br>
+
+
+
+   <div class="field fs-5">
+    <%= form.label :published%>
+    <%= form.check_box :published%> 
+      <br />
+   </div><br>
+
+  <div class="fs-5">
+    <%= form.label :cover_image %><br>
+    <%= form.file_field :cover_image  %>
+  </div><br>
+
+  <div class="fs-5">
+    <%= form.label :images %><br>
+    <%= form.file_field :images ,multiple: true, direct_upload: true %>
+  </div><br>
+ 
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>
+</div>

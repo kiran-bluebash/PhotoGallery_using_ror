@@ -1,0 +1,13 @@
+ body,html{
+    height:100%;
+ }
+ .bgimg{
+    background-image: url("photos/bg1.avif");
+    background-repeat:no-repeat;
+    background-size: cover ;  
+} 
+.form_border{
+    border :solid 4px rgb(235, 70, 70);
+    padding: .2rem;
+}
+
