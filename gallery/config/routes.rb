@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   root to: "albums#index"
   get '/my_albums' ,to: 'albums#my_albums'
+  get 'tags/:tag', to: 'albums#index', as: :tag
+
+
 
   resources :albums do
     member do

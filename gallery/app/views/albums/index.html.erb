@@ -3,12 +3,12 @@
 <div class="row container-fluid">
 
 <%= search_form_for @q do |form| %>
-  <%= form.label :title_cont ,"Title"%>
+  <%= form.label :title_cont ,"ALBUM NAME",class:"text-danger fw-bold fs-5"%>
   <%= form.search_field :title_cont %>
   <%= form.submit %>
 <%end%>
    <% @albums.each do |album| %>
-    
+   
       <div class="col-4  g-4 ">
         <div class=" card h-100 w-100">
            <% if album.cover_image.attached?%>
@@ -29,4 +29,17 @@
 
   <% end %>
   </div>
+
+
+
+
+
+<div class = "col-md-8 offset-2">
+  <% @albums.each do |album| %>
+
+    <small class="btn btn-light btn-outline-danger m-5">Tags: <%= raw album.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></small>
+   
+  <% end %>
+</div>
+  
 

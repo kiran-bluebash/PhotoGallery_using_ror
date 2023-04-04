@@ -2,11 +2,6 @@
 
 <div class="row container-fluid">
 
-<%= search_form_for @q do |form| %>
-  <%= form.label :title_cont ,"Title"%>
-  <%= form.search_field :title_cont %>
-  <%= form.submit %>
-<%end%>
    <% @albums.each do |album| %>
     
       <div class="col-4  g-4 ">
