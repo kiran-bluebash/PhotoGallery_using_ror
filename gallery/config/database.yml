@@ -21,9 +21,11 @@ test:
   database: gallery_test
 
 production:
-  <<: *default
-  database: gallery_production
-  username: gallery
-  password: <%= ENV['GALLERY_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  url: <%= ENV['DATABASE_URL'] %>
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
 
 
