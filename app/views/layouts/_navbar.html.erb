@@ -1,0 +1,34 @@
+ <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+          <div class="container-fluid">
+            <a class="navbar-brand text-danger" href="<%= root_path(@album) %> "><%= image_tag "photos/logo1.png",style:"height:35px;width:50px;"%>PHOTO GALLERY </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+              <ul class="navbar-nav mb-2 mb-lg-0 ">
+                <li class="nav-item">
+                  <a class="nav-link active text-dark" aria-current="page" href="<%= root_path(@album) %>">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link  text-dark" href="<%= new_album_path  %>">New Album</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link  text-dark" href="<%= my_albums_path	%>">My Album</a>
+                </li>
+                <li class="nav-item">
+                <% if user_signed_in? %>
+                  <li> <%= link_to "Edit", edit_user_registration_path ,class:"nav-link  text-dark text-decoration-none"%></li>
+                  <li><%= link_to "Sign Out", destroy_user_session_path, data: {
+                  turbo_method: :delete},class:"nav-link  text-dark text-decoration-none"%></li>
+                <%else%>
+                 <li> <%= link_to "Sign Up", new_user_registration_path, class:"nav-link  text-dark text-decoration-none"%></li>
+                 <li><%= link_to "Sign In", new_user_session_path, class:"nav-link  text-dark text-decoration-none" %></li>
+                <% end%>                           
+              </ul>
+              <%# <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search Album" aria-label="Search">
+                <button class="btn btn-outline-danger" type="submit">Search</button>
+              </form> %>
+            </div>
+          </div>
+    </nav>
