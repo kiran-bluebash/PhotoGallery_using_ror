@@ -47,9 +47,7 @@
             </div>
           </div>
     </nav>
-         <% if user_signed_in? %>
-         logged in as <%= current_user.email%>
-          <% end%> 
+       
            
          <%= yield %>
          <p class="notice text-center fs-4 text-danger"><%= notice %></p>

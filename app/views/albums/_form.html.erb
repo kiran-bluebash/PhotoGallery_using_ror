@@ -1,6 +1,6 @@
 <div class=" container-fluid d-flex justify-content-center ">
 <%= form_with(model: @album, local:true)do |form| %>
-<div class=" container form_border">
+<div class=" container form_border p-2">
   <div class="fs-5" >
     <%= form.label :title %><br>
     <%= form.text_field :title %>
@@ -36,6 +36,7 @@
   <div class= "form-group">
     <%= form.label :tag_ids, 'Tags' %>
     <%= form.select :tag_ids, options_from_collection_for_select(Tag.order(:name), :id, :name, form.object.tag_ids), { include_blank: true }, { multiple: true } %>
+  </div><br>
   <div>
      <%= form.submit %>
   </div>

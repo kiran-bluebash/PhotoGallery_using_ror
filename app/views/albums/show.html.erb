@@ -2,11 +2,9 @@
 
 <p class="text-center text-dark"><%= @album.body %></p>
 
-<p><%=  @album.published %></p>
-
 <div class="row container-fluid">
    <% @album.images.each do|image| %>
-      <div class="col-4 g-4 ">
+      <div class="col-xxl-4 col-lg-4 col-md-6 col-sm-12 g-4">
         <div class=" card h-100 w-100 ">
           <img src="<%=url_for(image) %> " type="<%= image.content_type %>" class="h-75 w-100">
           <div class="card-body mx-auto">
@@ -18,8 +16,9 @@
       </div>
     <% end %>
   </div>
-<h5 class="btn btn-danger mt-5 "><%= link_to "EDIT",edit_album_path(@album),class:"text-light text-decoration-none" %></h5>
-
+<div class= "text-center">
+<h5 class="btn btn-danger btn-lg mt-5  "><%= link_to "ADD MORE IMAGES",edit_album_path(@album),class:"text-light text-decoration-none " %></h5>
+</div>
   
 
 

@@ -9,7 +9,7 @@
 <%end%>
    <% @albums.each do |album| %>
    
-      <div class="col-xxl-4 col-lg-4 col-md-6 col-sm-12">
+      <div class="col-xxl-4 col-lg-4 col-md-6 col-sm-12 g-4">
         <div class=" card h-100 w-100 ">
            <% if album.cover_image.attached?%>
              <%= image_tag url_for(album.cover_image),class: "mx-auto h-75 w-100"%>
@@ -27,10 +27,10 @@
   <% end %>
   </div>
 
-<div class = "col-md-8 offset-2">
+<div class = "col-md-8 offset-2 ">
   <% @albums.each do |album| %>
 
-    <small class="btn btn-light btn-outline-danger m-5">Tags: <%= raw album.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></small>
+    <small class="btn btn-light btn-outline-danger  m-5">Tags: <%= raw album.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></small>
    
   <% end %>
 </div>

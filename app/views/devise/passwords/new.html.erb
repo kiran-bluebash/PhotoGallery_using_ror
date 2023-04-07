@@ -1,19 +1,19 @@
-<div class="container-fluid bgimg ">
+<div class="container-fluid h-100 bgimg ">
 <h2 class=" container-fluid text-danger text-center mt-2">Forgot your password?</h2>
-<div class=" container form_border mt-5">
+<div class=" container  text-center form_border mt-5">
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field ">
+  <div class="field fs-4 mt-2 ">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+  </div><br>
 
   <div class="actions">
     <%= f.submit "Send me reset password instructions" %>
   </div>
-<% end %>
+<% end %><br>
 
 <%= render "devise/shared/links" %>
 </div>

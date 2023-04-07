@@ -4,7 +4,7 @@
 
    <% @albums.each do |album| %>
     
-      <div class="col-4  g-4 ">
+      <div class="col-xxl-4 col-lg-4 col-md-6 col-sm-12 g-4">
         <div class=" card h-100 w-100">
            <% if album.cover_image.attached?%>
              <%= image_tag url_for(album.cover_image),class: "mx-auto h-75 w-100"%>
