@@ -3,9 +3,10 @@
 <div class="row container-fluid">
 
 <%= search_form_for @q do |form| %>
-  <%= form.label :title_cont ,"ALBUM NAME",class:"text-danger fw-bold fs-5"%>
-  <%= form.search_field :title_cont %>
-  <%= form.submit %>
+  <div class="d-flex justify-content-end mb-3">
+  <%= form.search_field :title_cont ,placeholder: "ALBUM NAME",class:" form-control "%>
+  <%= form.submit class:"btn btn-danger"%>
+  </div>
 <%end%>
    <% @albums.each do |album| %>
    
@@ -20,7 +21,7 @@
             <h5 class="btn  btn-danger"><%= link_to "Destroy", album_path(album), data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
-                  } , class: "text-light text-decoration-none "%>
+                  } , class: "text-light text-decoration-none img"%>
             </div>
         </div>
       </div>

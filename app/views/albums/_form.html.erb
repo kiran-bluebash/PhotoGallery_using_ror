@@ -24,7 +24,7 @@
    </div><br>
 
   <div class="fs-5">
-    <%= form.label :cover_image %><br>
+    <%= form.label :cover_image  %><br>
     <%= form.file_field :cover_image  %>
   </div><br>
 
@@ -38,7 +38,7 @@
     <%= form.select :tag_ids, options_from_collection_for_select(Tag.order(:name), :id, :name, form.object.tag_ids), { include_blank: true }, { multiple: true } %>
   </div><br>
   <div>
-     <%= form.submit %>
+     <%= form.submit class:"btn btn-danger" %>
   </div>
  
   
