@@ -26,7 +26,6 @@ class AlbumsController < ApplicationController
     end
   end
 
-
   def edit
     @album = Album.find(params[:id])
   end

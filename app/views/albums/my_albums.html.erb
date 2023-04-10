@@ -1,27 +1,20 @@
 <h1 class="text-center p-3 text-danger">Albums</h1>
-
 <div class="row container-fluid">
-
-   <% @albums.each do |album| %>
-    
-      <div class="col-xxl-4 col-lg-4 col-md-6 col-sm-12 g-4">
+  <% @albums.each do |album| %>
+     <div class="col-xxl-4 col-lg-4 col-md-6 col-sm-12 g-4">
         <div class=" card h-100 w-100">
            <% if album.cover_image.attached?%>
              <%= image_tag url_for(album.cover_image),class: "mx-auto h-75 w-100"%>
           <%end%>          
           <div class="card-body mx-auto">
-          
             <h5 class="btn btn-danger"><%= link_to album.title, album ,class:"text-light text-decoration-none " %></h5>
             <h5 class="btn  btn-danger"><%= link_to "Destroy", album_path(album), data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
-                  } , class: "text-light text-decoration-none "%>
-            </div>
+                  } , class: "text-light text-decoration-none "%></h5>
+          </div>
         </div>
-      </div>
-   
-
-
-  <% end %>
-  </div>
+     </div>
+    <% end %>
+</div>
 

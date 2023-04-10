@@ -1,23 +1,20 @@
 <h1 class="text-center text-danger"><%= @album.title %></h1>
-
 <p class="text-center text-dark"><%= @album.body %></p>
-
 <div class="row container-fluid">
    <% @album.images.each do|image| %>
       <div class="col-xxl-4 col-lg-4 col-md-6 col-sm-12 g-4">
         <div class=" card h-100 w-100 ">
           <img src="<%=url_for(image) %> " type="<%= image.content_type %>" class="h-75 w-100">
           <div class="card-body mx-auto">
-          
-            <h5 class="btn  btn-danger"><%= link_to "DESTROY" ,remove_image_album_path(@album,image_id: image.id), data:{
-             turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "text-light text-decoration-none "%>
+             <h5 class="btn  btn-danger"><%= link_to "DESTROY" ,remove_image_album_path(@album,image_id: image.id), data:{
+             turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "text-light text-decoration-none "%></h5>
             </div>
         </div>
       </div>
     <% end %>
   </div>
 <div class= "text-center">
-<h5 class="btn btn-danger btn-lg mt-5  "><%= link_to "ADD MORE IMAGES",edit_album_path(@album),class:"text-light text-decoration-none " %></h5>
+ <h5 class="btn btn-danger btn-lg mt-5  "><%= link_to "ADD MORE IMAGES",edit_album_path(@album),class:"text-light text-decoration-none " %></h5>
 </div>
   
 

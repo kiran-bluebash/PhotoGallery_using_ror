@@ -17,11 +17,11 @@
     <% end %>
   </div><br>
 
-   <div class="field fs-5">
+  <div class="field fs-5">
     <%= form.label :published%>
     <%= form.check_box :published%> 
       <br />
-   </div><br>
+  </div><br>
 
   <div class="fs-5">
     <%= form.label :cover_image  %><br>
@@ -37,11 +37,10 @@
     <%= form.label :tag_ids, 'Tags' %>
     <%= form.select :tag_ids, options_from_collection_for_select(Tag.order(:name), :id, :name, form.object.tag_ids), { include_blank: true }, { multiple: true } %>
   </div><br>
+
   <div>
      <%= form.submit class:"btn btn-danger" %>
   </div>
- 
-  
 <% end %>
 </div>
 </div>
